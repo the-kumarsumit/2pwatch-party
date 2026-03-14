@@ -62,17 +62,15 @@ export default function HostForm() {
         label="Your Name"
         value={hostName}
         onChange={setHostName}
-        placeholder="e.g. Alice"
       />
       <Field
-        label="Room ID"
+        label="Watch ID"
         value={roomId}
         onChange={setRoomId}
-        placeholder="e.g. my-room"
       />
 
       {/* Toggles */}
-      <div>
+      <div className="hidden">
         <p className="text-xs sm:text-sm font-medium text-gray-300 mb-2 sm:mb-3">
           Room Capabilities
         </p>
@@ -97,7 +95,7 @@ export default function HostForm() {
         className="w-full py-2.5 sm:py-3 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 disabled:opacity-50 text-white text-sm sm:text-base font-semibold rounded-xl transition-all flex items-center justify-center gap-2 touch-manipulation"
       >
         {loading && <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />}
-        Create Room
+        Admin Only
       </button>
     </form>
   );

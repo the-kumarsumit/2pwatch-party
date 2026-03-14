@@ -63,20 +63,19 @@ export default function JoinForm() {
           type="text"
           value={participantName}
           onChange={(e) => setParticipantName(e.target.value)}
-          placeholder="e.g. Bob"
           className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white text-sm sm:text-base placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
         />
       </div>
 
       <div>
         <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1 sm:mb-1.5">
-          Room ID
+          Watch ID
         </label>
         <input
           type="text"
           value={roomId}
           onChange={(e) => setRoomId(e.target.value)}
-          placeholder="Enter the room ID"
+          placeholder="Enter the watch ID"
           className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white text-sm sm:text-base placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
         />
       </div>
@@ -93,7 +92,7 @@ export default function JoinForm() {
         className="w-full py-2.5 sm:py-3 bg-green-600 hover:bg-green-700 active:bg-green-800 disabled:opacity-50 text-white text-sm sm:text-base font-semibold rounded-xl transition-all flex items-center justify-center gap-2 touch-manipulation"
       >
         {loading && <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />}
-        Join Room
+        Enter
       </button>
     </form>
   );

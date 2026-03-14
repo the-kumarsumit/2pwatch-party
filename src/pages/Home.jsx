@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Monitor } from "lucide-react";
 import HostForm from "../components/HostForm";
 import JoinForm from "../components/JoinForm";
 
@@ -12,13 +11,13 @@ export default function Home() {
         {/* Logo */}
         <div className="text-center mb-6 sm:mb-8">
           <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-blue-600 rounded-xl sm:rounded-2xl mb-3 sm:mb-4 shadow-lg shadow-blue-600/30">
-            <Monitor className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+            <img src="/anime-and-manga-svgrepo-com.svg" alt="logo" />
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-            ScreenMeet
+            2P Watch Party
           </h1>
           <p className="text-gray-400 text-sm sm:text-base mt-1 sm:mt-2">
-            Instant screen sharing for two
+            Instant watch party
           </p>
         </div>
 
@@ -38,7 +37,7 @@ export default function Home() {
                     : "text-gray-400 hover:text-gray-300 active:text-gray-200"
                 }`}
               >
-                {t === "host" ? "Host a Meeting" : "Join a Meeting"}
+                {t === "host" ? "Admin Only" : "Join "}
               </button>
             ))}
           </div>
