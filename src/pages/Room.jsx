@@ -29,16 +29,8 @@ function Placeholder({ role, hostName }) {
   return (
     <div className="text-center px-4">
       <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-        <span className="text-3xl sm:text-4xl">🖥️</span>
+        <span className="text-3xl sm:text-4xl"></span>
       </div>
-      <p className="text-gray-400 text-sm sm:text-lg">
-        {role === "host"
-          ? 'Tap "Share Screen" to begin'
-          : "Waiting for host to share screen…"}
-      </p>
-      {role === "participant" && (
-        <p className="text-gray-600 text-xs sm:text-sm mt-2">Host: {hostName}</p>
-      )}
     </div>
   );
 }
@@ -66,7 +58,7 @@ export default function Room() {
 
   /* ── UI state ── */
   const [isMicOn, setIsMicOn] = useState(false);
-  const [uiHidden, setUiHidden] = useState(false);
+  const [uiHidden, setUiHidden] = useState(true);
   const [panelOpen, setPanelOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [participantName, setParticipantName] = useState(null);

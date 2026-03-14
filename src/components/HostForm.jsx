@@ -31,7 +31,7 @@ export default function HostForm() {
 
     const onCreated = (data) => {
       off();
-      navigate(`/room/${data.roomId}`, {
+      navigate(`/${data.roomId}`, {
         state: {
           role: "host",
           config: data.config,

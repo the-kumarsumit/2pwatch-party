@@ -46,6 +46,7 @@ export default function Home() {
             {tab === "host" ? <HostForm /> : <JoinForm />}
           </div>
         </div>
+
       </div>
     </div>
   );

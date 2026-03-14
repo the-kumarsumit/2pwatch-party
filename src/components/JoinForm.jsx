@@ -27,7 +27,7 @@ export default function JoinForm() {
 
     const onJoined = (data) => {
       off();
-      navigate(`/room/${data.roomId}`, {
+      navigate(`/${data.roomId}`, {
         state: {
           role: "participant",
           config: data.config,
