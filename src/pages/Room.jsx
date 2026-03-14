@@ -29,7 +29,9 @@ function Placeholder({ role, hostName }) {
   return (
     <div className="text-center px-4">
       <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-        <span className="text-3xl sm:text-4xl"></span>
+        <span className="text-3xl sm:text-4xl">
+          <img src="/anime-and-manga-svgrepo-com.svg" alt="logo" />
+        </span>
       </div>
     </div>
   );
@@ -141,7 +143,7 @@ export default function Room() {
     const onLeft = () => setParticipantName(null);
     const onHostLeft = () => {
       cleanup();
-      alert("Host ended the meeting.");
+      alert("Party over, Goto sleep.");
       navigate("/");
     };
 
@@ -197,7 +199,7 @@ export default function Room() {
     el.muted = false;
     el.play()
       .then(() => setAudioBlocked(false))
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   // Redirect if invalid state
@@ -266,7 +268,7 @@ export default function Room() {
             <div className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-black/60 backdrop-blur px-2 sm:px-3 py-1 sm:py-1.5 rounded-full">
               <span className="text-[10px] sm:text-xs text-gray-300">
                 {connectionState === "new" && role === "host"
-                  ? "⏳ Waiting for participant…"
+                  ? "⏳ Waiting"
                   : connectionState === "new"
                     ? "⏳ Connecting…"
                     : `🔄 ${connectionState}`}
@@ -278,11 +280,10 @@ export default function Room() {
 
       {/* ═══════ CONTROLS ═══════ */}
       <div
-        className={`transition-all duration-300 ease-in-out ${
-          uiHidden
+        className={`transition-all duration-300 ease-in-out ${uiHidden
             ? "h-0 opacity-0 overflow-hidden"
             : "h-[60px] sm:h-[76px] border-t border-white/10"
-        }`}
+          }`}
       >
         <div className="h-full flex items-center justify-center px-2 sm:px-4 safe-area-bottom">
           <ControlsBar

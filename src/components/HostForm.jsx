@@ -87,7 +87,7 @@ export default function HostForm() {
         </p>
       </div>
 
-      {error && <ErrorBox message={error} />}
+      {/* {error && <ErrorBox message={error} />} */}
 
       <button
         type="submit"
