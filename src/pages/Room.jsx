@@ -7,6 +7,7 @@ import useAudioLevel from "../hooks/useAudioLevel";
 import ControlsBar from "../components/ControlsBar";
 import ParticipantsPanel from "../components/ParticipantsPanel";
 import DeviceSelector from "../components/DeviceSelector";
+import { startKeepAlive, stopKeepAlive } from "../utils/keepAlive"; // ← ADD THIS
 
 /* ═══════════════════════════════════
    Redirect Component
@@ -101,6 +102,12 @@ export default function Room() {
   /* ── Refs ── */
   const screenVideoRef = useRef(null);
   const remoteAudioRef = useRef(null);
+
+  /* ── Keep server alive ── */  // ← ADD THIS BLOCK
+  useEffect(() => {
+    startKeepAlive();
+    return () => stopKeepAlive();
+  }, []);
 
   /* ── Attach remote audio stream ── */
   useEffect(() => {
